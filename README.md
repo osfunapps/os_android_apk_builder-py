@@ -22,10 +22,7 @@ Or from the command line:
 ## Advanced Usage
 You can save your Key Store properties in a file, to avoid supplying them again in each apk build.
 
-Todo so, create a json file: 
-
-*/home/programming/jks_passes.json*
-
+Todo so, create a json file (or copy this [sign_in_example.json](sign_in_example.json) file): 
 
         {
           "$key_store_path": "/path/to/myKeystore.jks",
@@ -34,7 +31,7 @@ Todo so, create a json file:
           "$key_store_alias_pass": "myAliasPassword"
         }
 
-And then just point to this file from the command:
+ file) and then point to this file from the command:
 
     ab.run('/path/to/android/project', '/apk/desired/path', sign_in_file_path='/home/programming/jks_passes.json')
     
