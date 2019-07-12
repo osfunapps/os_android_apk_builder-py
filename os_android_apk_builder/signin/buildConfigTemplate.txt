@@ -1,0 +1,8 @@
+signingConfigs {
+    release {
+        storeFile file("$key_store_path")
+        storePassword "$key_store_pass"
+        keyAlias "$key_store_alias_name"
+        keyPassword "$key_store_alias_pass"
+    }
+}
