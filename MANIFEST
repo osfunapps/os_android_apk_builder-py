@@ -5,3 +5,4 @@ os_android_apk_builder/ApkBuilder.py
 os_android_apk_builder/ApkBuilderBp.py
 os_android_apk_builder/SigninConfigHandler.py
 os_android_apk_builder/__init__.py
+os_android_apk_builder/signin/buildConfigTemplate.txt
