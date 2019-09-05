@@ -31,7 +31,7 @@ Todo so, create a json file (or copy this [sign_in_example.json](sign_in_example
           "$key_store_alias_pass": "myAliasPassword"
         }
 
- file) and then point to this file from the command:
+ and then point to this file from the command:
 
     ab.run('/path/to/android/project', '/apk/desired/path', sign_in_file_path='/home/programming/jks_passes.json')
     
