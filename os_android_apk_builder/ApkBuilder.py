@@ -57,8 +57,8 @@ def run(project_path, apk_desired_path, gradle_path=None, sign_in_file_path=None
     # copy the apk to the user desired location (with the file name as the version code).
     built_apk_path = bp.copy_apk_to_path(project_path, apk_desired_path, var_code)
 
-    # logger.info('sanitizing build.gradle file...')
-    # # revert the build.gradle file to it's previous form
-    # bp.remove_sign_in_config_from_gradle(project_path)
-    #
-    # logger.info('apk built successfully in:\n' + built_apk_path)
+    logger.info('sanitizing build.gradle file...')
+    # revert the build.gradle file to it's previous form
+    bp.remove_sign_in_config_from_gradle(project_path)
+
+    logger.info('apk built successfully in:\n' + built_apk_path)

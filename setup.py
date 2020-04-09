@@ -4,7 +4,7 @@ setup(
     name='os_android_apk_builder',
     packages=['os_android_apk_builder'],
     package_data={'os_android_apk_builder': ['signin/buildConfigTemplate.txt']},
-    version='1.06',  # Start with a small number and increase it with every change you make
+    version='1.07',  # Start with a small number and increase it with every change you make
     license='MIT',  # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     description='This module will create an apk programmatically (dynamically), without Android Studio.',  # Give a short description about your library
     author='Oz Shabat',  # Type in your name
