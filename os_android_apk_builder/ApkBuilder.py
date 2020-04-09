@@ -31,11 +31,11 @@ def run(project_path, apk_desired_path, gradle_path=None, sign_in_file_path=None
     # permission checker action for the apk
     if not is_release_enabled:
         sign_in_params_dict = bp.fetch_sign_in_params(sign_in_file_path)
-        sign_in_config_file = bp.find_sign_in_config_file()[0]
-        bp.append_sign_in_config_to_gradle(project_path, sign_in_config_file, sign_in_params_dict)
+        sign_in_config_file = sign_in_file_path
+        bp.append_sign_in_config_to_gradle(project_path, sign_in_params_dict)
 
     logger.info('copy sign in completed. starting apk build up')
-
+    #
     # create the apk
     if gradle_path is None:
         gradle_path = bp.get_default_gradle_path(project_path)
@@ -57,8 +57,8 @@ def run(project_path, apk_desired_path, gradle_path=None, sign_in_file_path=None
     # copy the apk to the user desired location (with the file name as the version code).
     built_apk_path = bp.copy_apk_to_path(project_path, apk_desired_path, var_code)
 
-    logger.info('sanitizing build.gradle file...')
-    # revert the build.gradle file to it's previous form
-    bp.remove_sign_in_config_from_gradle(project_path)
-
-    logger.info('apk built successfully in:\n' + built_apk_path)
+    # logger.info('sanitizing build.gradle file...')
+    # # revert the build.gradle file to it's previous form
+    # bp.remove_sign_in_config_from_gradle(project_path)
+    #
+    # logger.info('apk built successfully in:\n' + built_apk_path)

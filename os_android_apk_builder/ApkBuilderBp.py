@@ -73,16 +73,16 @@ def fetch_params_from_sign_in_file(sign_in_file_path):
 
 # will ask the user for his key store params
 def fetch_params_from_user_input():
-    sign_in_params_dict = {'$key_store_path': tools.ask_for_input('Key store (.jks file) path:'),
-                           '$key_store_pass': tools.ask_for_input('Key store password:'),
-                           '$key_store_alias_name': tools.ask_for_input('Key store alias name:'),
-                           '$key_store_alias_pass': tools.ask_for_input('Key store alias password:')}
+    sign_in_params_dict = {'storeFile': tools.ask_for_input('Key store (.jks file) path:'),
+                           'storePassword': tools.ask_for_input('Key store password:'),
+                           'keyAlias': tools.ask_for_input('Key store alias name:'),
+                           'keyPassword': tools.ask_for_input('Key store alias password:')}
     tools.print_arr(sign_in_params_dict.values(), ',')
     return sign_in_params_dict
 
 
-def append_sign_in_config_to_gradle(project_path, sign_in_config_file, sign_in_params_dict):
-    sch.append_sign_in_config_to_gradle(project_path, sign_in_config_file, sign_in_params_dict)
+def append_sign_in_config_to_gradle(project_path, sign_in_params_dict):
+    sch.append_sign_in_config_to_gradle(project_path, sign_in_params_dict)
 
 
 def remove_sign_in_config_from_gradle(project_path):
@@ -91,7 +91,9 @@ def remove_sign_in_config_from_gradle(project_path):
 
 # will search for the buildConfigTemplate file and return it
 def find_sign_in_config_file():
-    return fh.search_file(fh.get_parent_path(__file__), 'buildConfigTemplate.txt')
+    parent_path = fh.get_parent_path(__file__)
+    kk = fh.search_files(fh.get_parent_path(__file__), 'buildConfigTemplate.txt')
+    return fh.search_files(fh.get_parent_path(__file__), 'buildConfigTemplate.txt')[0]
 
 
 # will get the default gradle path from the project

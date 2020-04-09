@@ -20,7 +20,7 @@ PH_GRADLE_LOG_SIGN_IN_RELEASE = '            signingConfig signingConfigs.releas
 
 
 # will add the user signed in params to the gradle
-def append_sign_in_config_to_gradle(project_path, sign_in_config_file, sign_in_params_dict):
+def append_sign_in_config_to_gradle(project_path, sign_in_params_dict):
     build_gradle_file = project_path + "/app/build.gradle"
     on_android_par = False
     on_build_types_par = False
@@ -38,7 +38,13 @@ def append_sign_in_config_to_gradle(project_path, sign_in_config_file, sign_in_p
             if not added_signin:
                 sys.stdout.write(PH_GRADLE_LOG_SIGN_IN_START)
                 sys.stdout.write('\n')
-                append_signin_file_lines(sign_in_config_file, sign_in_params_dict)
+                sys.stdout.write('signingConfigs {')
+                sys.stdout.write('\n')
+                sys.stdout.write('release {')
+                sys.stdout.write('\n')
+                append_signin_file_lines(sign_in_params_dict)
+                sys.stdout.write('}\n')
+                sys.stdout.write('}\n')
                 sys.stdout.write('\n')
                 sys.stdout.write(PH_GRADLE_LOG_SIGN_IN_END)
                 sys.stdout.write('\n')
@@ -58,16 +64,14 @@ def append_sign_in_config_to_gradle(project_path, sign_in_config_file, sign_in_p
 
 
 # will append the lines of the signin file, one by one, with the user sign in props
-def append_signin_file_lines(sign_in_config_file, sign_in_params_dict):
-    with open(sign_in_config_file) as f:
-        build_settings_content = f.readlines()
-        for line in build_settings_content:
-            for key, val in sign_in_params_dict.items():
-                if key in line:
-                    line = line.replace(key, val)
-                    break
-            sys.stdout.write(line)
-
+def append_signin_file_lines(sign_in_params_dict):
+    for key, val in sign_in_params_dict.items():
+        if key == 'storeFile':
+            sys.stdout.write(f'{key} file("{val}")\n')
+        else:
+            sys.stdout.write(f'{key} "{val}"\n')
+    sys.stdout.write('v1SigningEnabled true\n')
+    sys.stdout.write('v2SigningEnabled true\n')
 
 # will remove the user signed in params from the gradle, at the process end
 def remove_sign_in_config_from_gradle(project_path):

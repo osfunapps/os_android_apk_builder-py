@@ -25,10 +25,10 @@ You can save your Key Store properties in a file, to avoid supplying them again 
 Todo so, create a json file (or copy this [sign_in_example.json](sign_in_example.json) file): 
 
         {
-          "$key_store_path": "/path/to/myKeystore.jks",
-          "$key_store_pass": "myCoolKeyStorePass",
-          "$key_store_alias_name": "myAliasName",
-          "$key_store_alias_pass": "myAliasPassword"
+          "storeFile": "path/to/keystore_file.keystore",
+          "storePassword": "myCoolKeyStorePass",
+          "keyAlias": "myAliasName",
+          "keyPassword": "myAliasPassword"
         }
 
  file) and then point to this file from the command:
