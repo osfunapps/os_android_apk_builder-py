@@ -1,6 +1,6 @@
 {
-  "$key_store_path": "/path/to/myKeystore.jks",
-  "$key_store_pass": "myCoolKeyStorePass",
-  "$key_store_alias_name": "myAliasName",
-  "$key_store_alias_pass": "myAliasPassword"
+  "storeFile": "path/to/keystore_file.keystore",
+  "storePassword": "myCoolKeyStorePass",
+  "keyAlias": "myAliasName",
+  "keyPassword": "myAliasPassword"
 }
