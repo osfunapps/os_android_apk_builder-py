@@ -1,7 +1,7 @@
 import fileinput
 import sys
-import os_tools.StringUtils as su
-import os_tools.FileHandler as fh
+import os_tools.string_utils as su
+import os_tools.file_handler as fh
 
 ##################################################################################
 #

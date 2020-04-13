@@ -1,5 +1,5 @@
-import os_android_apk_builder.ApkBuilderBp as bp
-import os_tools.LoggerHandler as lh
+import os_android_apk_builder.modules.apk_builder_boilerplate as bp
+import os_tools.logger_handler as lh
 
 
 ##################################################################################

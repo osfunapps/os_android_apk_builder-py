@@ -1,7 +1,7 @@
 import os
-import os_tools.FileHandler as fh
-import os_tools.Tools as tools
-import os_android_apk_builder.SigninConfigHandler as sch
+import os_tools.file_handler as fh
+import os_tools.tools as tools
+import os_android_apk_builder.modules.signin_config_handler as sch
 
 ##################################################################################
 #
