@@ -3,4 +3,7 @@ setup.cfg
 setup.py
 os_android_apk_builder/__init__.py
 os_android_apk_builder/apk_builder.py
+os_android_apk_builder/test.py
+os_android_apk_builder/modules/apk_builder_boilerplate.py
+os_android_apk_builder/modules/signin_config_handler.py
 os_android_apk_builder/signin/buildConfigTemplate.txt
