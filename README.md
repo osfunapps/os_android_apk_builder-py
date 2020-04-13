@@ -11,13 +11,13 @@ Install via pip:
 ## Quick Usage       
 From Python:
     
-    import os_android_apk_builder.ApkBuilder as ab
+    import os_android_apk_builder.apk_builder as ab
     
     ab.run('/path/to/android/project', '/apk/desired/path')
   
 Or from the command line:
 
-    python3 -c 'import os_android_apk_builder.ApkBuilder as ab; ab.run("/path/to/android/project", "/apk/desired/path")'
+    python3 -c 'import os_android_apk_builder.apk_builder as ab; ab.run("/path/to/android/project", "/apk/desired/path")'
 
 ## Advanced Usage
 You can save your Key Store properties in a file, to avoid supplying them again in each apk build.
